@@ -3,47 +3,6 @@
 #include <iomanip>
 using namespace std;
 
-// void max_heapify_down(int arr[], int i, int N)
-// {
-// 	int left = 2*i;
-// 	int right = 2*i + 1;
-// 	int largest;
-
-// 	if(left <= N and arr[left] > arr[i])
-// 		largest = left;
-// 	else largest=i;
-
-// 	if(right <= N and arr[right] > arr[i])
-// 		largest=right;
-
-// 	if(largest != i)
-// 	{
-// 		swap(arr[i],arr[largest]);
-// 		max_heapify(arr, largest, N);
-
-// 	}
-// }
-
-// void min_heapify_down(int arr[], int i, int N)
-// {
-// 	int left = 2*i;
-// 	int right = 2*i + 1;
-// 	int smallest;
-
-// 	if(left <= N and arr[left] < arr[i])
-// 		smallest = left;
-// 	else smallest=i;
-
-// 	if(right <= N and arr[right] < arr[i])
-// 		smallest=right;
-
-// 	if(smallest != i)
-// 	{
-// 		swap(arr[i],arr[smallest]);
-// 		max_heapify(arr, smallest, N);
-
-// 	}
-// }
 int ParentIndex(long int i)
 {
 	return (i-1)/2;
@@ -164,8 +123,7 @@ float Median(long int a[], long int b[], long int size_a, long int size_b)
                 ++N_smaller;
                 smaller[0]=number;
                 cout<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<< endl;
-                 //cout<<i<<" adding" << a[i]<<" "<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<" size of smaller "<<N_smaller<<" top element "<<smaller[0]<< " size of bigger "<<N_bigger<<" top element "<<bigger[0]<<endl;
-                //cout<<smaller[0]<<" "<<smaller[1]<<" "<<smaller[2]<<" | "<< bigger[0]<<" "<<bigger[1]<<" "<<bigger[2]<<endl;
+                
                 continue;
             }
             if(N_bigger <= N_smaller and number >= smaller[0])
@@ -175,8 +133,7 @@ float Median(long int a[], long int b[], long int size_a, long int size_b)
                 bigger[N_bigger-1]=number;
                 MinHeapifyUp(bigger, N_bigger);
                 cout<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<endl;
-                //cout<<i<<" adding" << a[i]<<" "<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<" size of smaller "<<N_smaller<<" top element "<<smaller[0]<< " size of bigger "<<N_bigger<<" top element "<<bigger[0]<<endl;
-                //cout<<smaller[0]<<" "<<smaller[1]<<" "<<smaller[2]<<" | "<< bigger[0]<<" "<<bigger[1]<<" "<<bigger[2]<<endl;
+                
                 continue;
             }
             if(N_smaller <= N_bigger and number <= bigger[0])
@@ -185,8 +142,7 @@ float Median(long int a[], long int b[], long int size_a, long int size_b)
                 smaller[N_smaller-1]=number;
                 MaxHeapifyUp(smaller, N_smaller);
                 cout<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<endl;
-                //cout<<i<<" adding" << a[i]<<" "<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<" size of smaller "<<N_smaller<<" top element "<<smaller[0]<< " size of bigger "<<N_bigger<<" top element "<<bigger[0]<<endl;
-                //cout<<smaller[0]<<" "<<smaller[1]<<" "<<smaller[2]<<" | "<< bigger[0]<<" "<<bigger[1]<<" "<<bigger[2]<<endl;
+                
                 continue;
             }
             if(N_smaller > N_bigger and number < smaller[0])
@@ -197,8 +153,7 @@ float Median(long int a[], long int b[], long int size_a, long int size_b)
                 MinHeapifyUp(bigger, N_bigger);
                 MaxHeapifyDown(smaller, N_smaller);
                 cout<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<endl;
-                //cout<<i<<" adding" << a[i]<<" "<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<" size of smaller "<<N_smaller<<" top element "<<smaller[0]<< " size of bigger "<<N_bigger<<" top element "<<bigger[0]<<endl;
-                //cout<<smaller[0]<<" "<<smaller[1]<<" "<<smaller[2]<<" | "<< bigger[0]<<" "<<bigger[1]<<" "<<bigger[2]<<endl;
+               
                 continue;
             }
             if(N_bigger > N_smaller and number > bigger[0])
@@ -209,8 +164,7 @@ float Median(long int a[], long int b[], long int size_a, long int size_b)
                 MaxHeapifyUp(smaller, N_smaller);
                 MinHeapifyDown(bigger,N_bigger);
                 cout<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<endl;
-                //cout<<i<<" adding" << a[i]<<" "<<fixed<<setprecision(1)<<Median(smaller, bigger, N_smaller, N_bigger)<<" size of smaller "<<N_smaller<<" top element "<<smaller[0]<< " size of bigger "<<N_bigger<<" top element "<<bigger[0]<<endl;
-                //cout<<smaller[0]<<" "<<smaller[1]<<" "<<smaller[2]<<" | "<< bigger[0]<<" "<<bigger[1]<<" "<<bigger[2]<<endl;
+               
                 continue;
             }
         }
