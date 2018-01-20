@@ -7,46 +7,7 @@
 #include <queue>
 using namespace std;
 
-// class MyQueue { // with two stacks, too slow but correct
-  
-//     public:
-//         stack<long int> stack_newest_on_top, stack_oldest_on_top;   
-//         void push(long int x) {
-//             stack<long int> temp_stack_1, temp_stack_2;
-//             temp_stack_2=stack_newest_on_top;
-//             stack_newest_on_top.push(x);
-//             temp_stack_1.push(x);
 
-//             while(!temp_stack_2.empty())
-//             {
-//                 temp_stack_1.push(temp_stack_2.top());
-//                 temp_stack_2.pop();
-//             }
-//             stack_oldest_on_top=temp_stack_1;
-
-//         }
-
-//         void pop()
-//         {
-//              stack<long int> temp_stack_1, temp_stack_2;
-//              stack_oldest_on_top.pop();
-//              temp_stack_1=stack_oldest_on_top;
-
-//              while(!temp_stack_1.empty())
-//              {
-//                 temp_stack_2.push(temp_stack_1.top());
-//                 temp_stack_1.pop();
-//              }
-
-//              stack_newest_on_top=temp_stack_2;
-
-//         }
-
-//         long int front() 
-//         {
-//             return stack_oldest_on_top.top();
-//         }
-// };
 
 class MyQueue {
   
